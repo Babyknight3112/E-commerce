@@ -32,6 +32,11 @@ public class ProductController {
         return productService.getAllProduct();
     }
 
+    @GetMapping("product/get/price")
+    public List<ProductResponse> getAllProductByPrice() {
+        return productService.getAllProductByPrice();
+    }
+
     @PostMapping("/product/post")
     public ProductResponse addProduct(@RequestBody ProductCreate productCreate) {
         return productService.addProduct(productCreate);

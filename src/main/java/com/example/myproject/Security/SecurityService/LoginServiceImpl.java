@@ -5,6 +5,7 @@ import com.example.myproject.Entity.User;
 import com.example.myproject.Security.Login.LoginInformation;
 import com.example.myproject.Security.Login.LoginResponse;
 import com.example.myproject.Security.Login.RegisterInformation;
+import com.example.myproject.Security.Login.RegisterNotify;
 import com.example.myproject.Security.jwt.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -34,6 +35,9 @@ public class LoginServiceImpl implements LoginService {
             String username = loginInformation.getUsername();
             String password = loginInformation.getPassword();
 
+            log.info(username);
+            log.info(password);
+
             UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
             Authentication authenticate = authenticationManager.authenticate(authenticationToken);
             SecurityContextHolder.getContext().setAuthentication(authenticate);
@@ -49,14 +53,20 @@ public class LoginServiceImpl implements LoginService {
     }
 
     @Override
-    public String registerWeb(RegisterInformation registerInformation) {
+    public RegisterNotify registerWeb(RegisterInformation registerInformation) {
+
+        RegisterNotify registerNotify = new RegisterNotify();
 
         boolean check = userService.existUser(registerInformation.getUsername());
         if(check){
-            return null;
+            return registerNotify;
         }
 
-        userService.saveUser(registerInformation);
-        return "successfully registered";
+        boolean verify = userService.saveUser(registerInformation);
+        log.info("ok");
+        if (verify) {
+            registerNotify.setNotify("Register Successfully");
+        }
+        return registerNotify;
     }
 }

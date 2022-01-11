@@ -32,12 +32,18 @@ public class CustomJwtFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
         }
 
-        final String authenticationHeader = request.getHeader("MyJwtToken");
+        final String authenticationHeader = request.getHeader("Authorization");
+        log.info("ok");
+        log.info(authenticationHeader);
+        log.info(request.getHeader(""));
         if(authenticationHeader != null && authenticationHeader.startsWith("Bearer")){
             String token = authenticationHeader.substring("Bearer ".length());
+            log.info(token);
             if(jwtUtil.validate(token)){
+                log.info("valid");
                 String username = jwtUtil.getUsername(token);
                 UserDetails userDetails = myUserDetailsService.loadUserByUsername(username);
+                System.out.println(userDetails.getAuthorities());
                 UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                 authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);

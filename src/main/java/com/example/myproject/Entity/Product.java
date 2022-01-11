@@ -20,6 +20,14 @@ public class Product {
 
     private String image;
 
+    private String sub1;
+
+    private String sub2;
+
+    private String sub3;
+
+    private String sub4;
+
     @Column(nullable = false)
     private String description;
 

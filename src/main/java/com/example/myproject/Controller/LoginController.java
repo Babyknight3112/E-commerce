@@ -3,8 +3,8 @@ package com.example.myproject.Controller;
 import com.example.myproject.Security.Login.LoginInformation;
 import com.example.myproject.Security.Login.LoginResponse;
 import com.example.myproject.Security.Login.RegisterInformation;
+import com.example.myproject.Security.Login.RegisterNotify;
 import com.example.myproject.Security.SecurityService.LoginService;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,13 +19,13 @@ public class LoginController {
         this.loginService = loginService;
     }
 
-    @GetMapping("/log/jwt")
+    @PostMapping("/log/jwt")
     public LoginResponse loginWeb( @RequestBody LoginInformation loginInformation) {
         return loginService.loginWeb(loginInformation);
     }
 
     @PostMapping("/log/register")
-    public String registerWeb( @RequestBody RegisterInformation registerInformation) {
+    public RegisterNotify registerWeb(@RequestBody RegisterInformation registerInformation) {
         return loginService.registerWeb(registerInformation);
     }
 }

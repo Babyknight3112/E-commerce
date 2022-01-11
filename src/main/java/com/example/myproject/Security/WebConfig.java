@@ -42,10 +42,13 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.cors().and().csrf().disable()
+        http.csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().authorizeRequests()
                 .antMatchers("/log/**").permitAll()
+                .antMatchers("/Hi").permitAll()
+                .antMatchers("/product/get/**").permitAll()
+//                .antMatchers("product/get/**").hasAnyAuthority("ROLE_USER")
                 .anyRequest().authenticated();
 
         http

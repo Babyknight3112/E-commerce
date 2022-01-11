@@ -23,8 +23,13 @@ public class Mapper {
 
     public ProductResponse toProductResponse(Product product){
         return new ProductResponse(
+                product.getId(),
                 product.getName(),
                 product.getImage(),
+                product.getSub1(),
+                product.getSub2(),
+                product.getSub3(),
+                product.getSub4(),
                 product.getDescription(),
                 product.getBrand(),
                 product.getCategory(),

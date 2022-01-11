@@ -16,6 +16,8 @@ public interface ProductService {
 
     List<ProductResponse> getAllProduct();
 
+    List<ProductResponse> getAllProductByPrice();
+
     ProductResponse addProduct(ProductCreate productCreate);
 
     String updateProduct(int id, ProductUpdate product);

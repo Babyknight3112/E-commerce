@@ -5,6 +5,7 @@ import com.example.myproject.Entity.User;
 import com.example.myproject.Repository.RoleRepository;
 import com.example.myproject.Repository.UserRepository;
 import com.example.myproject.Security.Login.RegisterInformation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+@Slf4j
 @Component
 public class UserServiceImpl implements UserService {
 
@@ -29,19 +31,21 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User saveUser(RegisterInformation registerInformation) {
+    public Boolean saveUser(RegisterInformation registerInformation) {
         if (!registerInformation.getPassword().equals(registerInformation.getPasswordRepeat())) {
-            return null;
+            return false;
         }
 
         User user = new User();
+        user.setName(registerInformation.getName());
+        user.setEmail(registerInformation.getEmail());
         user.setUsername(registerInformation.getUsername());
         user.setPassword(passwordEncoder.encode(registerInformation.getPassword()));
         Collection<Role> roles = new ArrayList<>();
         roles.add(roleRepository.getById(1));
         user.setRoles(roles);
         userRepository.save(user);
-        return user;
+        return true;
     }
 
     @Override

@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public interface UserService {
 
-    User saveUser(RegisterInformation registerInformation);
+    Boolean saveUser(RegisterInformation registerInformation);
     String setAdminToUser(String username);
     User getUser(String username);
     List<User> getUsers();

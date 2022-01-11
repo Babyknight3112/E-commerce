@@ -7,6 +7,7 @@ import com.example.myproject.DTO.ProductUpdate;
 import com.example.myproject.Entity.Product;
 import com.example.myproject.Mapper.Mapper;
 import com.example.myproject.Repository.ProductRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -43,6 +44,12 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductResponse> getAllProduct() {
         List<Product> productList = productRepository.findAll();
+        return productList.stream().map(mapper::toProductResponse).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<ProductResponse> getAllProductByPrice() {
+        List<Product> productList = productRepository.findAll(Sort.by(Sort.Direction.ASC, "price"));
         return productList.stream().map(mapper::toProductResponse).collect(Collectors.toList());
     }
 
