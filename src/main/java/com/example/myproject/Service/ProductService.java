@@ -1,8 +1,6 @@
 package com.example.myproject.Service;
 
-import com.example.myproject.DTO.ProductCreate;
-import com.example.myproject.DTO.ProductResponse;
-import com.example.myproject.DTO.ProductUpdate;
+import com.example.myproject.DTO.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,8 +18,8 @@ public interface ProductService {
 
     ProductResponse addProduct(ProductCreate productCreate);
 
-    String updateProduct(int id, ProductUpdate product);
+    UpdateNotify updateProduct(int id, ProductUpdate product);
 
-    String deleteProduct(int id);
+    DeleteNotify deleteProduct(int id);
 
 }

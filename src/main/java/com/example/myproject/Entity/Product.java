@@ -31,7 +31,6 @@ public class Product {
     @Column(nullable = false)
     private String description;
 
-    @Column(nullable = false)
     private String brand;
 
     @Column(nullable = false)
@@ -40,7 +39,6 @@ public class Product {
     @Column(nullable = false)
     private int price;
 
-    @Column(nullable = false)
     private int countInStock;
 
     @Column(columnDefinition = "float default 0")

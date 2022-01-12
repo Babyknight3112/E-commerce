@@ -1,9 +1,7 @@
 package com.example.myproject.Service;
 
 
-import com.example.myproject.DTO.ProductCreate;
-import com.example.myproject.DTO.ProductResponse;
-import com.example.myproject.DTO.ProductUpdate;
+import com.example.myproject.DTO.*;
 import com.example.myproject.Entity.Product;
 import com.example.myproject.Mapper.Mapper;
 import com.example.myproject.Repository.ProductRepository;
@@ -54,7 +52,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public String updateProduct(int id, ProductUpdate productUpdate) {
+    public UpdateNotify updateProduct(int id, ProductUpdate productUpdate) {
         Product product = productRepository.findProductById(id);
         product.setName(productUpdate.getName());
         product.setDescription(productUpdate.getDescription());
@@ -64,12 +62,12 @@ public class ProductServiceImpl implements ProductService {
         product.setImage(productUpdate.getImage());
 
         productRepository.save(product);
-        return "Successfully updated the product has id: " + id;
+        return new UpdateNotify();
     }
 
     @Override
-    public String deleteProduct(int id) {
+    public DeleteNotify deleteProduct(int id) {
         productRepository.delete(productRepository.findProductById(id));
-        return "Deleted the product has id: " + id;
+        return new DeleteNotify();
     }
 }

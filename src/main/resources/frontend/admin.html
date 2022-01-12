@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.css">
+</head>
+<body>
+
+    <a href="index.html">Quay trở lại thiên đường xã hội chủ nghĩa!</a>
+    
+    <div class="all">
+
+        <br>
+
+        <div class="container-delete">
+            <form class="deletePr">
+                <div class="form-group">
+                  <label for="formGroupExampleInput">ID muốn xóa</label>
+                  <input type="number" class="form-control" id="idDelete" placeholder="Cho mình xin một con số">
+                </div>
+                <button type="submit" class="btn btn-outline-danger">Danger</button>
+              </form>
+        </div>
+
+        <br>
+
+        <div class="container-add">
+            <form class="add">
+                
+                <!-- <div class="form-group">
+                    <label for="formGroupExampleInput">Id</label>
+                    <input type="text" class="form-control" id="id" placeholder="Em đưa ta màu buồn cũ kỹ, làm sao ta vẽ cả bầu trời hoa">
+                  </div> -->
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Product Name</label>
+                  <input type="text" class="form-control" id="productName" placeholder="Giữa phố tan tầm ngược chiều gió thổi!">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">Description</label>
+                  <input type="text" class="form-control" id="description" placeholder="Lá vàng tung bay trong gió...">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Main Image</label>
+                    <input type="text" class="form-control" id="mainImage" placeholder="Chuyến tàu cuối cùng khởi hành...">
+                  </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Sub Image 1</label>
+                    <input type="text" class="form-control" id="subImage1" placeholder="Ngày mai nắng sẽ lên phải không em?">
+                  </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Sub Image 2</label>
+                    <input type="text" class="form-control" id="subImage2" placeholder="Mãi mãi là bao xa?">
+                  </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Sub Image 3</label>
+                    <input type="text" class="form-control" id="subImage3" placeholder="Rồi bỗng một ngày, khi chúng mình dừng lại...">
+                  </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Sub Image 4</label>
+                    <input type="text" class="form-control" id="subImage4" placeholder="Là người thứ 3 của người thứ 3.">
+                  </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Category</label>
+                    <input type="text" class="form-control" id="category" placeholder="Chúng ta của sau này :)">
+                  </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Price</label>
+                    <input type="text" class="form-control" id="price" placeholder="Nếu ở một nơi nào đó không có em...">
+                  </div>
+    
+                  <button type="submit" class="btn btn-outline-primary">Add</button>
+                
+              </form>
+    
+              <!-- <button type="submit" class="btn btn-outline-secondary">Update</button>
+                <button type="submit" class="btn btn-outline-success">Delete</button> -->
+        </div>
+    
+        <br>
+
+        <div class="container-update">
+            <form class="updatePr">
+                <button type="submit" class="btn btn-outline-secondary">Update</button>
+              </form>
+        </div>
+        
+    
+        <div class="container-table">
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                  </tr>
+                </thead>
+                <tbody class="list">
+                  
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <script src="admin.js"></script>
+</body>
+</html>

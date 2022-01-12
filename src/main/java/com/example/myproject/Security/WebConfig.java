@@ -48,6 +48,9 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/log/**").permitAll()
                 .antMatchers("/Hi").permitAll()
                 .antMatchers("/product/get/**").permitAll()
+                .antMatchers("/product/**").permitAll()
+                .antMatchers("/product/delete/**").permitAll()
+                .antMatchers("/product/update/**").permitAll()
 //                .antMatchers("product/get/**").hasAnyAuthority("ROLE_USER")
                 .anyRequest().authenticated();
 

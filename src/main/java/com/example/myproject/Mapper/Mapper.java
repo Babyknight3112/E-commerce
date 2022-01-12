@@ -13,6 +13,10 @@ public class Mapper {
         product.setName(productCreate.getName());
         product.setDescription(productCreate.getDescription());
         product.setImage(productCreate.getImage());
+        product.setSub1(productCreate.getSub1());
+        product.setSub2(productCreate.getSub2());
+        product.setSub3(productCreate.getSub3());
+        product.setSub4(productCreate.getSub4());
         product.setBrand(productCreate.getBrand());
         product.setCategory(productCreate.getCategory());
         product.setPrice(productCreate.getPrice());
