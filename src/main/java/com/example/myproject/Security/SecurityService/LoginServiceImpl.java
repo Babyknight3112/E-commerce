@@ -17,6 +17,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Slf4j
 @Component
@@ -48,25 +50,43 @@ public class LoginServiceImpl implements LoginService {
             return new LoginResponse(username, roles, jwtUtil.generateToken(user));
         } catch (BadCredentialsException e) {
             log.info("That bai");
-            return null;
+            return new LoginResponse("Username hoặc password không trùng khớp");
         }
     }
 
     @Override
     public RegisterNotify registerWeb(RegisterInformation registerInformation) {
 
-        RegisterNotify registerNotify = new RegisterNotify();
+
+        if(!registerInformation.getName().matches("^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩ" +
+                "ũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚ" +
+                "ỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ ]{1,30}$")){
+            return new RegisterNotify("Tên không được chứa số và các ký tự đặc biệt");
+        }
+
+        if(!registerInformation.getEmail().matches("^[a-zA-Z0-9-_.]+[@][a-zA-Z0-9.]+$")){
+            return new RegisterNotify("Email chỉ được chứa các chữ cái, các chữ số và các ký tự '-','.','_'");
+        }
+
+        if(!registerInformation.getUsername().matches("^[a-zA-Z0-9-_.]{8,30}$")){
+            return new RegisterNotify("Username chỉ được chứa các chữ cái, các chữ số, các ký tự '-','.','_', ít nhất 8 ký tự và nhiều nhất 30 ký tự");
+        }
+
+        if(!registerInformation.getPassword().matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$")){
+            return new RegisterNotify("Password phải chứa ít nhất một chữ thường, một chữ in hoa, một số và ít nhất 8 ký tự");
+        }
+
+        if(!registerInformation.getPassword().equals(registerInformation.getPasswordRepeat())){
+            return new RegisterNotify("Nhập lại password không khớp với password đã nhập");
+        }
 
         boolean check = userService.existUser(registerInformation.getUsername());
         if(check){
-            return registerNotify;
+            return new RegisterNotify("Tồn tại username đã nhập");
         }
 
         boolean verify = userService.saveUser(registerInformation);
         log.info("ok");
-        if (verify) {
-            registerNotify.setNotify("Register Successfully");
-        }
-        return registerNotify;
+        return new RegisterNotify("Successfully Register");
     }
 }

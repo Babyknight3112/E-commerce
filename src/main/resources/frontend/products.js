@@ -46,7 +46,7 @@ function getProduct(url) {
 const renderPosts = (posts) => {
     posts.forEach(post => {
         output1 += `<div class="col-4-pr" id="">
-        <a href="" id="${post.id}" onclick="myFunction(this.id)"><img src="${post.image}" alt=""></a>
+        <a href="details.html?id=${post.id}"><img src="${post.image}" alt=""></a>
         <h4>${post.name}</h4>
         <p>${post.price}$</p>
     </div>`;

@@ -1,0 +1,172 @@
+* {margin: 0; padding: 0;}
+
+.container-cr {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    list-style-type: none;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /* top: 50px;
+    left: 35%; */
+}
+
+.navbar a {
+    margin: 0 5px 0 5px;
+    padding: 5px 20px 5px 20px;
+    border-radius: 12px;
+    min-width: 30px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    opacity: 0.8;
+}
+
+.navbar li:nth-last-child(5) a{
+    background-color: #161E54;
+}
+
+.navbar li:nth-last-child(4) a{
+    background-color: #3E065F ;
+}
+
+.navbar :nth-last-child(3) a{
+    background-color: #FF5151;
+}
+
+.navbar :nth-last-child(2) a{
+    background-color: #88E0EF ;
+}
+
+.navbar :nth-last-child(1) a{
+    background-color: #FF9B6A;
+}
+
+
+
+.control-form-cr h4 {
+    min-width: 105px;
+}
+
+.container-cr p {
+    text-align: center;
+    font-size: 17px;
+    margin: auto;
+    max-width: 500px;
+    /* padding: 5px 30px 5px 30px; */
+    padding: 0;
+    color: white;
+    background: #EC255A;
+    border-radius: 20px;
+    /* line-height: 26px; */
+    padding: 7px 22px 7px 22px;
+}
+
+.container-cr form {
+    margin: auto;
+    margin-top: 18px;
+}
+
+.container-cr form .control-form-cr {
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.container-cr form .control-form-cr input {
+    width: 300px;
+}
+
+.container-cr form .control-form-cr h4 {
+    min-width: 140px;
+    font-weight: normal;
+    font-size: 15px;
+    position: relative;
+    top: 5px;
+}
+
+.container-cr form button {
+    margin: 5px 0 10px 134px;
+    background-color: rgb(24, 24, 24);
+    border: none;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+}
+
+.container-cr form button:hover {
+    opacity: 0.9;
+}
+
+.container-cr table {
+    margin:auto;
+    width: 300px;
+    align-items: center;
+}
+
+.container-cr hr {
+    margin-top: 30px;
+}
+
+/* .contrainer-cr table {
+} */
+
+.container-cr table {
+    margin-top: 10px;
+    width: 600px;
+}
+
+.container-delete {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 1000px;
+    position: relative;
+}
+
+.container-delete h6 {
+    font-size: 3px;
+    visibility: hidden;
+    position: relative;
+    top: 100px;
+}
+
+.container-delete button {
+    padding: 2px 5px;
+    margin: 0 0 0 150px;
+}
+
+.container-update {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 1000px;
+    position: relative;
+}
+
+.container-update h6 {
+    font-size: 3px;
+    visibility: hidden;
+    position: relative;
+    top: 100px;
+}
+
+.container-update button {
+    padding: 2px 5px;
+    margin: 0 0 0 150px;
+}
+
+#update-form input {
+    width: 300px;
+}
+
+#update-form button {
+    margin-top: 20px;
+    
+}

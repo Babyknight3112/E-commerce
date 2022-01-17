@@ -1,14 +1,17 @@
 
 let containerSingle = document.querySelector('.container-single');
 
-const url = "http://localhost:3112/product/get/id/12";
+var id = window.location.search.substring(4);
+const url = "http://localhost:3112/product/get/id";
 
-function getProduct(id) {
-    fetch(`http://localhost:3112/product/get/id/${id}`)
-        .then(response => response.json())
-        .then(data => renderPosts(data))
-        
+if(id == null){
+    id = '4';
 }
+
+fetch(`${url}/${id}`)
+    .then(response => response.json())
+    .then(data => renderPosts(data))
+        
 
 
 const renderPosts = (post) => {
@@ -55,19 +58,19 @@ const renderPosts = (post) => {
                 <div class="m-khoi">
                     <h5 class="hdcz">Hướng dẫn chọn size</h5>
                     <hr>
-                    <div class="ndm-khoi">Hôm nay, là một ngày đẹp trời</div>
+                    <div class="ndm-khoi">ĐANG CẬP NHẬT</div>
                 </div>
                 <hr>
                 <div class="m-khoi">
                     <h5 class="hdtt">Hướng dẫn thanh toán</h5>
                     <hr>
-                    <div class="ndm-khoi">Yêu em vì em là em thôi, được không?</div>
+                    <div class="ndm-khoi">ĐANG CẬP NHẬT</div>
                 </div>
                 <hr>
                 <div class="m-khoi">
                     <h5 class="csdt">Chính sách đổi trả</h5>
                     <hr>
-                    <div class="ndm-khoi" id="csdt">Mãi mãi là bao xa?</div>
+                    <div class="ndm-khoi" id="csdt">ĐANG CẬP NHẬT</div>
                 </div>
             </div>
         
@@ -77,19 +80,6 @@ const renderPosts = (post) => {
         </div>`;
         containerSingle.innerHTML = output;
     }
-
-    getProduct(1);
-
-    var optionProduct = document.querySelector('.option');
-    console.log(optionProduct);
-
-    optionProduct.addEventListener('change', (e) => {
-         e.preventDefault;
-         console.log(e.target.value);
-         getProduct(e.target.value);
-
-    })
-
 
    
     function changeImg() {

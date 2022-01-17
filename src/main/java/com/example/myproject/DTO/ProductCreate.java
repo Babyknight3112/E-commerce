@@ -3,6 +3,7 @@ package com.example.myproject.DTO;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Data
 public class ProductCreate {
@@ -30,8 +31,10 @@ public class ProductCreate {
 
     private String brand;
 
+    @NotBlank
     private String category;
 
+    @NotNull
     private int price;
 
     private int countInStock;

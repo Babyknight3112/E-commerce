@@ -32,10 +32,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Boolean saveUser(RegisterInformation registerInformation) {
-        if (!registerInformation.getPassword().equals(registerInformation.getPasswordRepeat())) {
-            return false;
-        }
-
         User user = new User();
         user.setName(registerInformation.getName());
         user.setEmail(registerInformation.getEmail());

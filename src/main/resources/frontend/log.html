@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,15 +12,16 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <title>Login Page</title>
 </head>
+
 <body>
 
     <div class="header">
         <div class="navbar">
             <div class="logo">
-                <a href="admin.html"><img src="images/logo.png" alt="" width="100px"></a>
+                <a href="read.html"><img src="images/logo.png" alt="" width="100px"></a>
             </div>
 
             <nav>
@@ -27,7 +29,7 @@
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="products.html">PRODUCTS</a></li>
                     <li><a href="">CONTACT</a></li>
-                    <li><a href="details.html">DETAILS</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
                     <li><a href="log.html">ACCOUNT</a></li>
                 </ul>
             </nav>
@@ -36,44 +38,93 @@
     <hr>
 
     <div class="container-all">
-    
-        
+
+
         <div class="container-log">
             <div class="row-log">
                 <div class="form-btn-log">
-                    
-                    
-                 
-                <div class="col-2-log">
-                    <form action="" id="loginForm">
-                        <input type="text" placeholder="Username" id="usernameLogin">
-                        <input type="password" placeholder="Password" id="passwordLogin">
-                        <button type="submit" class="btn-2" id="loginBtn">Login</button>
-                        <a href="">Forgot Password</a>
-                        <hr id="Indicator">
-                        <ul><span onclick="register()">Register</span></ul>
-                    </form>
+
+
+
+                    <div class="col-2-log">
+                        <form action="" id="loginForm">
+                            <div class="control-form">
+                                <label for="" class="form-label">Username</label>
+                                <input type="text" placeholder="" id="usernameLogin">
+                                <small></small>
+                            </div>
+                            <div class="control-form">
+                                <label for="" class="form-label">Password</label>
+                                <input type="password" placeholder="" id="passwordLogin">
+                                <small></small>
+                            </div>
+                            <ul><button type="submit" class="btn-2" id="loginBtn">Login</button></ul>
+                            <ul><a href="">Forgot Password?</a></ul>
+                            <hr id="Indicator">
+                            <ul><span onclick="register()">Register</span></ul>
+                            <ul id="OR"><span>OR</span></ul>
+
+                            <ul id="facebook"><span id=""><i class="fab fa-facebook-square"></i>Facebook</span></ul>
+                            <ul id="google"><span id="google"><i class="fab fa-google"></i>Google</span></ul>
+
+                        </form>
+                    </div>
+
+                    <div class="col-2-log">
+                        <form action="" id="registerForm">
+                            <div class="control-form">
+                                <label for="" class="form-label">Fullname</label>
+                                <input type="text" placeholder="Dương Tiểu Vy" id="fullnameRegis">
+                                <small></small>
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+
+                            <div class="control-form">
+                                <label for="" class="form-label">Email</label>
+                                <input type="email" placeholder="VyDT@gmail.com" id="emailRegis">
+                                <small></small>
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+
+                            <div class="control-form">
+                                <label for="" class="form-label">Username</label>
+                                <input type="text" placeholder="DW.FlameFreezing" id="usernameRegis">
+                                <small></small>
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+
+                            <div class="control-form">
+                                <label for="" class="form-label">Password</label>
+                                <input type="password" placeholder="Password" id="passwordRegis">
+                                <small></small>
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+
+                            <div class="control-form">
+                                <label for="" class="form-label">Repeat Password</label>
+                                <input type="password" placeholder="Re-type Password" id="passwordRepeatRegis">
+                                <small></small>
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+
+                            <ul> <button type="submit" class="btn-2" id="regisBtn">Register</button></ul>
+                            <hr>
+                            <ul><span onclick="login()">Back To Login</span></ul>
+
+                        </form>
+                    </div>
                 </div>
-        
-                <div class="col-2-log">
-                    <form action="" id="registerForm">
-                        <input type="text" placeholder="Full name" id="fullnameRegis">
-                        <input type="email" placeholder="Email" id="emailRegis">
-                        <input type="text" placeholder="Username" id="usernameRegis">
-                        <input type="password" placeholder="Password" id="passwordRegis">
-                        <input type="password" placeholder="Repeat Password" id="passwordRepeatRegis">
-                        <button type="submit" class="btn-2" id="regisBtn" >Register</button>
-                        <hr>
-                        <ul><span onclick="login()">Back To Login</span></ul>
-                    </form>
-                </div>
+
             </div>
-             
-        </div>
         </div>
     </div>
 
-    
+
 
     <div class="footer">
         <div class="footer-row">
@@ -90,20 +141,36 @@
             <div class="footer-col-4">
                 <h1>GIỚI THIỆU FLAME-FREEZING.VN</h1>
                 <ul>
-                    <a href=""><li>Câu Chuyện Thương Hiệu</li></a>
-                    <a href=""><li>Chính Sách Bảo Mật</li></a>
-                    <a href=""><li>Sứ Mệnh - Tầm Nhìn</li></a>
-                    <a href=""><li>Thanh Toán Chuyển Khoản</li></a>
+                    <a href="">
+                        <li>Câu Chuyện Thương Hiệu</li>
+                    </a>
+                    <a href="">
+                        <li>Chính Sách Bảo Mật</li>
+                    </a>
+                    <a href="">
+                        <li>Sứ Mệnh - Tầm Nhìn</li>
+                    </a>
+                    <a href="">
+                        <li>Thanh Toán Chuyển Khoản</li>
+                    </a>
                 </ul>
             </div>
 
             <div class="footer-col-4">
                 <h1>HỖ TRỢ KHÁCH HÀNG</h1>
                 <ul>
-                    <a href=""><li>Giao Hàng - Thanh Toán</li></a>
-                    <a href=""><li>Hướng Dẫn Chọn Size</li></a>
-                    <a href=""><li>Hướng Dẫn Đổi Sản Phẩm</li></a>
-                    <a href=""><li>Hướng Dẫn Mua Hàng</li></a>
+                    <a href="">
+                        <li>Giao Hàng - Thanh Toán</li>
+                    </a>
+                    <a href="">
+                        <li>Hướng Dẫn Chọn Size</li>
+                    </a>
+                    <a href="">
+                        <li>Hướng Dẫn Đổi Sản Phẩm</li>
+                    </a>
+                    <a href="">
+                        <li>Hướng Dẫn Mua Hàng</li>
+                    </a>
                 </ul>
             </div>
 
@@ -118,7 +185,7 @@
                 </div>
 
                 <div class="icon">
-                    <a href="https://www.facebook.com/"><i class="fab fa-facebook fa-2x"  ></i></a>
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook fa-2x"></i></a>
                     <a href="https://www.youtube.com/"><i class="fab fa-youtube fa-2x"></i></a>
                     <a href="https://www.instagram.com/"><i class="fab fa-instagram fa-2x"></i></a>
                     <a href="https://www.messenger.com/"><i class="fab fa-facebook-messenger fa-2x"></i></a>
@@ -132,12 +199,12 @@
                     <div class="call">
                         <a href=""><i class="fas fa-phone-volume"></i></a>
                     </div>
-                    
-                <h3>0333468865</h3>
+
+                    <h3>0333468865</h3>
 
                 </div>
-                
-            <h4>Tất cả các ngày trong tuần</h4>
+
+                <h4>Tất cả các ngày trong tuần</h4>
 
             </div>
         </div>
@@ -145,14 +212,15 @@
         <hr>
         <p class="copyright">Copyright 2022 - NGUYEN CHIEU DUONG</p>
     </div>
-</div>
-    
-    
+    </div>
+
+
 
     <script src="log.js"></script>
     <script src="contact.js"></script>
 
-    
-   
+
+
 </body>
+
 </html>

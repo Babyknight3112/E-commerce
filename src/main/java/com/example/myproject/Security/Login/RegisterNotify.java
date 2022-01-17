@@ -7,7 +7,7 @@ public class RegisterNotify {
 
     private String notify;
 
-    public RegisterNotify() {
-        this.notify = "Register Failed";
+    public RegisterNotify(String notify) {
+        this.notify = notify;
     }
 }

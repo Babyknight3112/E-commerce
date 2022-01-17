@@ -33,9 +33,9 @@ public class CustomJwtFilter extends OncePerRequestFilter {
         }
 
         final String authenticationHeader = request.getHeader("Authorization");
-        log.info("ok");
-        log.info(authenticationHeader);
-        log.info(request.getHeader(""));
+//        log.info("ok");
+//        log.info(authenticationHeader);
+//        log.info(request.getHeader(""));
         if(authenticationHeader != null && authenticationHeader.startsWith("Bearer")){
             String token = authenticationHeader.substring("Bearer ".length());
             log.info(token);
